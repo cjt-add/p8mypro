@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
 }
-html,body,#app,.login{
+html,body,#app,.login,.home{
   width: 100%;
   height: 100%;
 }
