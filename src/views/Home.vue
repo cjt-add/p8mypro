@@ -5,14 +5,14 @@
         :default-active="activeIndex2"
         class="el-menu-demo"
         mode="horizontal"
-        background-color="#545c64"
+        background-color="#333"
         text-color="#fff"
         active-text-color="#ffd04b"
         router
       >
         <el-menu-item index="/home/index">首页</el-menu-item>
         <el-menu-item index="/home/cart">商品</el-menu-item>
-         <el-menu-item index="/home/dd">订单</el-menu-item>
+         <el-menu-item index="/home/dingList">订单</el-menu-item>
         <el-menu-item index="/home/app">会员</el-menu-item>
         <el-menu-item index="/home/Sz">设置</el-menu-item>
         <el-submenu index="6">
@@ -40,6 +40,14 @@ export default {
   methods:{
     tc(){
       sessionStorage.removeItem('token')
+    }
+  },
+  beforeRouteEnter(to,from,next){
+    if(sessionStorage.getItem('token')){
+      next()
+    }else{
+      alert('请先登录')
+      next('/login')
     }
   }
 };

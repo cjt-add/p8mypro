@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 // 引入axios
 import axios from 'axios'
+// import http from './http'
 // 引入element-ui插件
 import ElementUI from 'element-ui';
 // 引入element-ui样式

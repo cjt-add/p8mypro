@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import App from '../components/Index/App'
 import Cart from '../components/Index/Cart'
-import Dd from '../components/Index/Dd'
+import dingList from '../components/Index/dingList'
 import Index from '../components/Index/Index'
 import Sz from '../components/Index/Sz'
 import CartList from '../components/indexHome/CartList'
@@ -29,9 +29,9 @@ const routes = [
         component: Cart
       },
       {
-        path: 'dd',
-        name: 'Dd',
-        component: Dd
+        path: 'dingList',
+        name: 'dingList',
+        component: dingList
       },
       {
         path: 'index',

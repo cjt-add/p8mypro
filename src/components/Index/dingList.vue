@@ -1,11 +1,11 @@
 <template>
-    <div class="dd">
+    <div class="dingList">
         订单
     </div>
 </template>
 <script>
 export default {
-    name:'dd'
+    name:'dingList'
 }
 </script>
 <style lang="scss">

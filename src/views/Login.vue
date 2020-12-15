@@ -38,24 +38,24 @@ export default {
   },
   methods:{
     login(){
-      var script = document.createElement('script')
-      script.src = 'http://ceshi5.dishait.cn/admin/login'
-      var boxs = document.querySelector('.boxs')
-      boxs.appendChild(script)
-      this.$http.post('http://ceshi5.dishait.cn/admin/login?username='+this.ruleForm.name+'&password='+this.ruleForm.password).then((res)=>{
+      // var script = document.createElement('script')
+      // script.src = 'http://ceshi5.dishait.cn/admin/login'
+      // var boxs = document.querySelector('.boxs')
+      // boxs.appendChild(script)
+      var obj = {username:this.ruleForm.name,password:this.ruleForm.password}
+      this.$http.post('/api/login',obj).then((res)=>{
         console.log(res)
-        if(res.data.msg =='ok'){
           sessionStorage.setItem('token',JSON.stringify(res.data.data.token))
           this.$router.push('/home')
-        }else{
-          this.$message.error('用户名或密码错误')
-        }
+      }).catch((err)=>{
+         console.log(err.response)
+         this.$message.error(err.response.data.msg)
       })
     }
   },
-  mounted(){
-    this.login()
-  }
+  // mounted(){
+  //   this.login()
+  // }
 };
 </script>
 <style lang="scss">
